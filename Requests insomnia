@@ -1,0 +1,351 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: api-baber-validation
+meta:
+  id: wrk_88c8aeed1ed341a586d7f23c87d84db6
+  created: 1771268752879
+  modified: 1771268752879
+  description: ""
+collection:
+  - url: http://localhost:1234/users
+    name: CreateUser
+    meta:
+      id: req_568a2dfb56b94f058c54be96f2024a6b
+      created: 1771268771667
+      modified: 1771274090963
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771668
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Liandro Chaves admin",
+          "email": "liandro@ldscadmin.com",
+          "password": "123456789"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/sessions
+    name: AuthenticateUser
+    meta:
+      id: req_bf6f19c4236046c0aca541fa5c831956
+      created: 1771270183468
+      modified: 1771274152572
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771618
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "liandro@ldscadmin.com",
+          "password": "123456789"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/barber
+    name: AuthenticateBarber
+    meta:
+      id: req_eccc0e0a21e34234a73efb4fe3a7acb4
+      created: 1771271142885
+      modified: 1771271703858
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771568
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Cabelinho da Silva",
+          "bio": "Mestre no disfarce e na régua máxima"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzEyNzEzMDksImV4cCI6MTc3MTM1NzcwOSwic3ViIjoiYTRkNWU1ZGYtZTYwOS00YjYyLThmYzEtZjIyMDZlYjM5YTU0In0.u5GsNVyH-CY-T2BojTGAduNVlKre7whvwCOu94RNSpU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/service
+    name: CreateServices
+    meta:
+      id: req_87d094b987fe4d419b057d3d15014bc6
+      created: 1771271766883
+      modified: 1771274240469
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771518
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Corte de Cria",
+          "price": 35.00,
+          "duration": 40
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzEyNzQyMjUsImV4cCI6MTc3MTM2MDYyNSwic3ViIjoiMzg2OTU2NWYtN2QxZC00NTdlLTlkYWUtMTkxMDI0ODU4MzZiIn0.6tM2E0iEuMMoHhKsJgMiSlO9hQxOgPlYuIHinPqn8j8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/appointment
+    name: CreateAppointment
+    meta:
+      id: req_829dd3995e0b4469b2e0e1aabea7e817
+      created: 1771271839737
+      modified: 1771274666477
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771468
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "barberId": "6edc2c94-9f50-4cc6-9da7-af49db854d4a",
+          "serviceId": "46123252-2413-45b3-9b38-1a3dd9ce6b0e",
+          "date": "2026-03-03T21:30:00.000Z"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzEyNzQyMjUsImV4cCI6MTc3MTM2MDYyNSwic3ViIjoiMzg2OTU2NWYtN2QxZC00NTdlLTlkYWUtMTkxMDI0ODU4MzZiIn0.6tM2E0iEuMMoHhKsJgMiSlO9hQxOgPlYuIHinPqn8j8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/appointment/me
+    name: ListAppointments
+    meta:
+      id: req_b684439c409f4de2a87a4c614cdfffcd
+      created: 1771272021033
+      modified: 1771274763979
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771418
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzEyNzQyMjUsImV4cCI6MTc3MTM2MDYyNSwic3ViIjoiMzg2OTU2NWYtN2QxZC00NTdlLTlkYWUtMTkxMDI0ODU4MzZiIn0.6tM2E0iEuMMoHhKsJgMiSlO9hQxOgPlYuIHinPqn8j8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/appointment/3724d71c-664c-4bee-bc6b-df0025715792
+    name: DeleteAppointment
+    meta:
+      id: req_ec0cca171d6c4a839c6cff3c1327d1ff
+      created: 1771272139441
+      modified: 1771274836560
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771368
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzEyNzQyMjUsImV4cCI6MTc3MTM2MDYyNSwic3ViIjoiMzg2OTU2NWYtN2QxZC00NTdlLTlkYWUtMTkxMDI0ODU4MzZiIn0.6tM2E0iEuMMoHhKsJgMiSlO9hQxOgPlYuIHinPqn8j8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/barber/public
+    name: ListBarbers
+    meta:
+      id: req_4565fa8f5b35458f9f67790fe613f9f7
+      created: 1771272326942
+      modified: 1771272533968
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771393
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/service/public
+    name: ListServices
+    meta:
+      id: req_82bd43589dc54757bed8a8f3650809d9
+      created: 1771272612730
+      modified: 1771272623776
+      isPrivate: false
+      description: ""
+      sortKey: -1771268771380.5
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:1234/users/profile
+    name: UpdateProfile
+    meta:
+      id: req_f9a16dc76b7343619cec71acfbda22ca
+      created: 1771272666450
+      modified: 1771272912571
+      isPrivate: false
+      description: ""
+      sortKey: -1771272666450
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Liandro S. Chaves",
+          "password": "321"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzEyNzEzMDksImV4cCI6MTc3MTM1NzcwOSwic3ViIjoiYTRkNWU1ZGYtZTYwOS00YjYyLThmYzEtZjIyMDZlYjM5YTU0In0.u5GsNVyH-CY-T2BojTGAduNVlKre7whvwCOu94RNSpU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_3991df623aad5a8abac5ed4bee01a26f8b373b89
+    created: 1771268752890
+    modified: 1771268752890
+environments:
+  name: Base Environment
+  meta:
+    id: env_3991df623aad5a8abac5ed4bee01a26f8b373b89
+    created: 1771268752885
+    modified: 1771268752885
+    isPrivate: false
