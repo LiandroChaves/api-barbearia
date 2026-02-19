@@ -8,7 +8,7 @@ Bem-vindo à **API da Barbearia**! Esta API permite que usuários agendem horár
 
 ### Pré-requisitos
 
-* Node.js (v16+)
+* Node.js (v22.12.0+)
 * Prisma
 * PostgreSQL
 
@@ -22,7 +22,10 @@ Bem-vindo à **API da Barbearia**! Esta API permite que usuários agendem horár
 
 2. Configure as Variáveis de Ambiente (veja a seção `.env`).
 
-3. Execute as migrações:
+3. instale o cliente do prisma e execute as migrações:
+   ```bash
+   npx prisma generate
+   ```
 
    ```bash
    npx prisma migrate dev
@@ -161,3 +164,9 @@ A entidade User representa quem interage diretamente com a plataforma e possui a
 **Simplicidade:** o agendamento utiliza apenas referências diretas (`barber_id` e `service_id`), mantendo o fluxo claro e objetivo.
 
 **Escalabilidade:** caso seja necessário futuramente fornecer acesso ao barbeiro, basta criar um usuário vinculado ao `barber_id`, sem alteração estrutural no banco de dados existente.
+
+formato de env:
+
+<!-- DATABASE_URL="[user]:[password]@localhost:5432/[database]?schema=public"
+JWT_SECRET="[your-secret-key]"
+PORT=[1234] -->

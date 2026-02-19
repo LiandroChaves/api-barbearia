@@ -11,13 +11,11 @@ class CreateAppointmentService {
             throw new AppError("Cannot schedule appointments in the past.", 400);
         }
 
-        // Check if barber exists
         const barberExists = await prisma.barber.findUnique({ where: { id: barberId } });
         if (!barberExists) {
             throw new AppError("Barber not found.", 404);
         }
 
-        // Check if service exists
         const serviceExists = await prisma.service.findUnique({ where: { id: serviceId } });
         if (!serviceExists) {
             throw new AppError("Service not found.", 404);
